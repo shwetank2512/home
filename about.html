@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Us</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fffaf7;
+    }
+
+    header {
+      background-color: #ff5e57;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .flex-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .flex-box {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 1.5rem;
+      width: 300px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .flex-box:hover {
+      transform: scale(1.05);
+    }
+
+    .flex-box h3 {
+      color: #ff5e57;
+      margin-bottom: 0.5rem;
+    }
+
+    footer {
+      background-color: #eee;
+      padding: 1rem;
+      text-align: center;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>About Us</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Who We Are</h2>
+    <p>We are passionate about food. Our mission is to bring you the best quality snacks and desserts right to your doorstep.</p>
+
+    <!-- Flexbox Section -->
+    <div class="flex-container">
+      <div class="flex-box">
+        <h3>🍰 Our Mission</h3>
+        <p>To serve delightful treats that bring happiness to every home, using the finest ingredients and lots of love.</p>
+      </div>
+      <div class="flex-box">
+        <h3>🚀 Our Vision</h3>
+        <p>To become a household name in online food delivery, known for quality, freshness, and outstanding service.</p>
+      </div>
+      <div class="flex-box">
+        <h3>💖 Our Values</h3>
+        <p>We value customer satisfaction, honesty, and a passion for creating joyful food experiences for all.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Cherry On The Top.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shop - Cherry On The Top</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 2rem;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .cart {
+      margin: 2rem;
+      background: #ffe9e3;
+      padding: 1rem;
+      border-radius: 10px;
+    }
+
+    .cart h3 {
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Shop</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+      <a href="shop.html">Shop</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="products" id="productList">
+      <!-- Products will be inserted here -->
+    </section>
+
+    <section class="cart">
+      <h3>🛒 Your Cart</h3>
+      <ul id="cartItems"></ul>
+      <p><strong>Total:</strong> ₹<span id="cartTotal">0</span></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Cherry On The Top. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const products = [
+      {
+        name: "French Fries",
+        price: 80,
+        image: "https://media.istockphoto.com/id/614420426/photo/basket-of-french-fries.jpg?s=612x612&w=0&k=20&c=o6IZg_NPJkOaICTa883jd49BwZvvI7wlP6SnjhyxqsI="
+      },
+      {
+        name: "Veg Burger",
+        price: 120,
+        image: "https://static.vecteezy.com/system/resources/thumbnails/023/809/530/small/a-flying-burger-with-all-the-layers-ai-generative-free-photo.jpg"
+      },
+      {
+        name: "Chocolate Cake",
+        price: 150,
+        image: "https://i.pinimg.com/736x/e9/1c/b9/e91cb9b0e38be83872bed7661e474981.jpg"
+      },
+      {
+        name: "Ice Cream Sundae",
+        price: 100,
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZPdEtpPuuyghFytJmo7yTOv8xCvVRLqcqFA&s"
+      }
+    ];
+
+    const cart = [];
+
+    function renderProducts() {
+      const list = document.getElementById("productList");
+      products.forEach((product, index) => {
+        const card = document.createElement("div");
+        card.className = "product-card";
+        card.innerHTML = `
+          <img src="${product.image}" alt="${product.name}">
+          <h3>${product.name}</h3>
+          <p>₹${product.price}</p>
+          <input type="number" min="1" value="1" id="qty-${index}">
+          <button onclick="addToCart(${index})">Add to Cart</button>
+        `;
+        list.appendChild(card);
+      });
+    }
+
+    function addToCart(index) {
+      const quantity = parseInt(document.getElementById(`qty-${index}`).value);
+      const product = products[index];
+      const existing = cart.find(item => item.name === product.name);
+      if (existing) {
+        existing.quantity += quantity;
+      } else {
+        cart.push({ ...product, quantity });
+      }
+      renderCart();
+    }
+
+    function renderCart() {
+      const cartList = document.getElementById("cartItems");
+      const cartTotal = document.getElementById("cartTotal");
+      cartList.innerHTML = "";
+      let total = 0;
+      cart.forEach(item => {
+        const li = document.createElement("li");
+        li.textContent = `${item.name} x ${item.quantity} = ₹${item.quantity * item.price}`;
+        cartList.appendChild(li);
+        total += item.quantity * item.price;
+      });
+      cartTotal.textContent = total;
+    }
+
+    renderProducts();
+  </script>
+</body>
+</html>

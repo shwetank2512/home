@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Our Services</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .services-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 2rem;
+    }
+
+    .service-box {
+      background: #fff;
+      border-radius: 15px;
+      padding: 2rem;
+      width: 300px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .service-box:hover {
+      transform: translateY(-5px);
+    }
+
+    .service-icon {
+      font-size: 40px;
+      margin-bottom: 1rem;
+    }
+
+    .service-title {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: #ff5e57;
+    }
+
+    .service-desc {
+      font-size: 1rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Our Services</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="services-container">
+      <div class="service-box">
+        <div class="service-icon">🍽</div>
+        <div class="service-title">Online Food Ordering</div>
+        <div class="service-desc">
+          Order your favorite meals online anytime, anywhere, with just a few clicks.
+        </div>
+      </div>
+
+      <div class="service-box">
+        <div class="service-icon">🚚</div>
+        <div class="service-title">Fast Delivery</div>
+        <div class="service-desc">
+          We ensure your food arrives hot and fresh, right to your doorstep, super fast.
+        </div>
+      </div>
+
+      <div class="service-box">
+        <div class="service-icon">🎉</div>
+        <div class="service-title">Catering for Events</div>
+        <div class="service-desc">
+          Hosting a party or event? Let us handle the food so you can enjoy the moment.
+        </div>
+      </div>
+
+      <div class="service-box">
+        <div class="service-icon">👨‍🍳</div>
+        <div class="service-title">Custom Orders</div>
+        <div class="service-desc">
+          Want something special? We customize meals to fit your taste and preferences.
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Cherry On The Top.</p>
+  </footer>
+</body>
+</html>
